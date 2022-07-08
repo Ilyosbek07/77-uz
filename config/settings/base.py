@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 ]
 
-ROOT_URLCONF = 'django_template.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
