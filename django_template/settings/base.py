@@ -34,6 +34,7 @@ THIRD_PART_APPS = [
     'django_extensions',  # https://pypi.org/project/django-extensions/
     'debug_toolbar',  # https://django-debug-toolbar.readthedocs.io/
     'corsheaders',  # https://pypi.org/project/django-cors-headers/
+    'drf_yasg',  # https://drf-yasg.readthedocs.io/en/stable/readme.html
 ]
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PART_APPS
@@ -108,6 +109,10 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
