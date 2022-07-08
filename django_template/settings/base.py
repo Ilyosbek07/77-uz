@@ -27,7 +27,9 @@ DJANGO_APPS = [
 ]
 
 CUSTOM_APPS = [
-    'src.users'
+    'src.users',
+    'src.base',
+    'src.common',
 ]
 
 THIRD_PART_APPS = [
