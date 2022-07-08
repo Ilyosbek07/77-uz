@@ -27,7 +27,7 @@ DJANGO_APPS = [
 ]
 
 CUSTOM_APPS = [
-
+    'src.users'
 ]
 
 THIRD_PART_APPS = [
@@ -72,6 +72,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_template.wsgi.application'
 
+# AUTH USER
+AUTH_USER_MODEL = 'users.User'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -87,6 +89,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# END AUTH USER
 
 LANGUAGE_CODE = 'en-us'
 
