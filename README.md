@@ -8,7 +8,6 @@ docker-compose -f docker-compose.yml build
 docker-compose -f docker-compose.yml up
 ```
 
-
 ## SetUp without docker
 ```
 python -m pip install -r requirements.txt
