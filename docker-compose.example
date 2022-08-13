@@ -36,3 +36,17 @@ services:
   redis:
     image: redis:5.0
     restart: always
+
+  celery_worker:
+    <<: *web
+    ports: [ ]
+    command: celery -A config worker -l INFO
+    restart: always
+
+  celery_beat:
+    <<: *web
+    ports: [ ]
+    depends_on:
+      - db
+    command: celery -A config beat -l INFO
+    restart: always

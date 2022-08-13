@@ -37,6 +37,7 @@ THIRD_PART_APPS = [
     'debug_toolbar',  # https://django-debug-toolbar.readthedocs.io/
     'corsheaders',  # https://pypi.org/project/django-cors-headers/
     'drf_yasg',  # https://drf-yasg.readthedocs.io/en/stable/readme.html
+    'rest_framework',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PART_APPS

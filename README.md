@@ -2,10 +2,18 @@
 
 Django quick start template
 
-## SetUp with docker
+## ENVIRONMENT
+#### Copy and Configure env with project settings
 ```
-docker-compose -f docker-compose.yml build
-docker-compose -f docker-compose.yml up
+cp .env.example .env
+cp config/settings/local_settings.example.py config/settings/local_settings.py
+```
+
+## SetUp with docker
+#### ${PROJECT_NAME} is your project name
+```
+docker-compose -f docker-compose.yml -p ${PROJECT_NAME} build
+docker-compose -f docker-compose.yml -p ${PROJECT_NAME} up
 ```
 
 ## SetUp without docker
