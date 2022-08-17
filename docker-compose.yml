@@ -6,7 +6,8 @@ volumes:
   media_data: {}
 
 services:
-  web: &web
+  web:
+    container_name: ${PROJECT_NAME}_web
     depends_on:
       - db
     build: .
@@ -22,6 +23,7 @@ services:
 
   db:
     image: postgres:13.4-buster
+    container_name: ${PROJECT_NAME}_db
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file: .env
@@ -34,5 +36,6 @@ services:
     restart: always
 
   redis:
+    container_name: ${PROJECT_NAME}_redis
     image: redis:5.0
     restart: always
