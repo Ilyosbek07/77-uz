@@ -51,6 +51,7 @@ class Image(BaseFile):
     content = models.ImageField(verbose_name=_("Image"), upload_to=file_path_generator)
 
     class Meta:
+        app_label = 'panel_files'
         db_table = "common_image"
         verbose_name = _("Image")
         verbose_name_plural = _("Images")
@@ -61,6 +62,7 @@ class File(BaseFile):
     content = models.FileField(verbose_name=_("File"), upload_to=file_path_generator)
 
     class Meta:
+        app_label = 'panel_files'
         db_table = "file"
         verbose_name = _("File")
         verbose_name_plural = _("Files")
