@@ -3,7 +3,7 @@
 <div class="form-group">
     <select class="form-control search-filter" style="width: 100%;" tabindex="-1" aria-hidden="true" data-name="{{ field_name }}">
         <option value="">{{ title }}</option>
-        <option value="">---------</option>
+        <optgroup label="----------"></optgroup>
         {% for choice in choices %}
             {% if choice.name %}
                 <option data-name="{{ choice.name }}" value="{{ choice.value }}" {% if choice.selected %}selected {% endif %}>
