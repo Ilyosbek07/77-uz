@@ -18,6 +18,7 @@ ALLOWED_HOSTS = []
 
 # APPS
 DJANGO_APPS = [
+    'modeltranslation',
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -31,26 +32,25 @@ CUSTOM_APPS = [
     'src.users',
     'src.base',
     'src.common',
+    'src.catalog',
 ]
 
 THIRD_PART_APPS = [
     'django_extensions',  # https://pypi.org/project/django-extensions/
-    'debug_toolbar',  # https://django-debug-toolbar.readthedocs.io/
+    # 'debug_toolbar',  # https://django-debug-toolbar.readthedocs.io/
     'corsheaders',  # https://pypi.org/project/django-cors-headers/
     'drf_yasg',  # https://drf-yasg.readthedocs.io/en/stable/readme.html
     'rest_framework',
+    'ckeditor',
+    'captcha'
 ]
 
-ADMIN_SIDEBAR_APPS = [
-    'src.admin_sidebar.panel_files',
-]
-
-INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PART_APPS + ADMIN_SIDEBAR_APPS
+INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PART_APPS
 # END APPS
 
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -139,6 +139,18 @@ CORS_ALLOW_HEADERS = ['*']
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 # END CORS
+
+
+# REST_FRAMEWORK
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 10,
+    "EXCEPTION_HANDLER": "src.base.exception_handler.custom_exception_handler",
+}
+# END REST_FRAMEWORK
 
 
 JAZZMIN_SETTINGS = {
@@ -243,6 +255,8 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
+        'catalog.image': 'fas fa-image',
+        'catalog.file': 'fas fa-file',
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
@@ -278,3 +292,9 @@ JAZZMIN_SETTINGS = {
     # Add a language dropdown into the admin
     "language_chooser": True,
 }
+
+
+LANGUAGES = (
+    ('ru', '🇷🇺Russian'),
+    ('en', '🏴󠁧󠁢󠁥󠁮󠁧󠁿English'),
+)

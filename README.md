@@ -26,4 +26,3 @@ python manage.py runserver
 
 ## Rules
 - list_display must contain a field 'id'
-- Admin sidebar section must be defined in admin_sidebar folder as django app

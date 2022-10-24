@@ -243,6 +243,7 @@
                                             {% for model in app.models %}
                                                 <li class="nav-item">
                                                     <a href="{% if model.url %}{{ model.url }}{% else %}javascript:void(0){% endif %}" class="nav-link">
+                                                        <img style="visibility: hidden" src="https://api.iconify.design/ic:sharp-subdirectory-arrow-right.svg?color=%23888888https://api.iconify.design/ic:sharp-subdirectory-arrow-right.svg?color=%23888888"></img>
                                                         <i class="nav-icon {{ model.icon }}"></i>
                                                         <p>{{ model.name }}</p>
                                                     </a>

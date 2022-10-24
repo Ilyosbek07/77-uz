@@ -19,3 +19,7 @@ DATABASES = {
         'PORT': env.int('POSTGRES_PORT')
     }
 }
+
+
+RECAPTCHA_PUBLIC_KEY = ''
+RECAPTCHA_PRIVATE_KEY = ''

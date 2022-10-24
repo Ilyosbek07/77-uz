@@ -55,6 +55,9 @@
                 </div>
             </div>
         </div>
+        <div class="input-group mb-3">
+            {{ form.captcha.errors }} {{ form.captcha }}
+        </div>
         {% url 'admin_password_reset' as password_reset_url %}
         {% if password_reset_url %}
             <div class="mb-3">
