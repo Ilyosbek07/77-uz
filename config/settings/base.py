@@ -1,6 +1,5 @@
 from pathlib import Path
 import environ
-
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # READING ENV
@@ -13,7 +12,7 @@ SECRET_KEY = env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # APPS
@@ -44,6 +43,12 @@ THIRD_PART_APPS = [
     'ckeditor',
     'captcha'
 ]
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
+    }
+}
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PART_APPS
 # END APPS
@@ -298,3 +303,6 @@ LANGUAGES = (
     ('ru', '🇷🇺Russian'),
     ('en', '🏴󠁧󠁢󠁥󠁮󠁧󠁿English'),
 )
+RECAPTCHA_PUBLIC_KEY = env.str('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = env.str('RECAPTCHA_PRIVATE_KEY')
+
